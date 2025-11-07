@@ -1,2 +1,12 @@
 ./idea/*
 .vscode/
+.idea/codeStyles/codeStyleConfig.xml
+.idea/compiler.xml
+.idea/encodings.xml
+.idea/gmod-mcp.iml
+.idea/inspectionProfiles/Project_Default.xml
+.idea/jarRepositories.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml
