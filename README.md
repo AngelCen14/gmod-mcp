@@ -5,7 +5,7 @@ MCP server to allow an AI Agent to interact with a Garry’s Mod dedicated serve
 ## ✅ Key Features
 
 - Support for communication between an AI Agent and GMod server via MCP.  
-- Includes an addon for GMod `gmod-mcp-addon`, providing custom conosole commands to automate son actions in the game.
+- Includes an addon for GMod `gmod-mcp-addon`, providing custom console commands to automate son actions in the game.
 - MPC Server is implemented in Java using Spring AI to connect the AI Agent with GMod.
 
 ## 📦 Repository Structure
