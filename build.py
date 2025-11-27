@@ -27,7 +27,7 @@ if build_type == "mcp":
     print("Building for MCP...")
 
     project_dir = "./gmod-mcp-springboot"
-    cmd = f'"{MAVEN_LOCATION}" clean package -DskipTests'
+    cmd = f'"{MAVEN_LOCATION}" clean package {"-DskipTests" if "--skipTests" in sys.argv else ""}'
 
     os.chdir(project_dir)
     os.system(cmd)
@@ -41,8 +41,7 @@ if build_type == "mcp":
 
     print(f"Built JAR file located at: {jar_file}")
 
-
-    if len(sys.argv) > 2 and sys.argv[2] == "--runInspector":
+    if "--runInspector" in sys.argv:
         GMOD_HOST = os.getenv("GMOD_HOST")
         GMOD_PORT = os.getenv("GMOD_PORT")
         GMOD_RCON_PASSWORD = os.getenv("GMOD_RCON_PASSWORD")
@@ -59,9 +58,7 @@ if build_type == "mcp":
            print("KeyboardInterrupt received. Terminating MCP Inspector subprocess...")
         finally:
             cleanup()
-
 elif build_type == "addon":
     print("Building for Addon...")
 else:
     print("Unknown build type. Please specify 'mcp' or 'addon'.")
-
