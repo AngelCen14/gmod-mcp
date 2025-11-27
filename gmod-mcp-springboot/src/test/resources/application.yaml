@@ -1,0 +1,4 @@
+gmodrcon:
+  host: localhost
+  port: 27015
+  password: testpassword
