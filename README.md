@@ -25,7 +25,7 @@ MCP server to allow an AI Agent to interact with a Garry’s Mod dedicated serve
 ### Environment Configuration
 Create a .env file following `.env.example`
 
-### 1. Run de build script
+### 1. Run the build script
 ``` bash
 python build.py mcp --runInspector
 ```
