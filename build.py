@@ -46,11 +46,19 @@ if build_type == "mcp":
         GMOD_PORT = os.getenv("GMOD_PORT")
         GMOD_RCON_PASSWORD = os.getenv("GMOD_RCON_PASSWORD")
 
-        inspector_cmd = f'npx -y @modelcontextprotocol/inspector '
-        inspector_params = f'java -Dspring.ai.mcp.server.stdio=true -jar {jar_file}'
+        jvm_params = f'-Dspring.ai.mcp.server.stdio=true -jar "{jar_file}"'
         gmod_params = f'--gmodrcon.host={GMOD_HOST} --gmodrcon.port={GMOD_PORT} --gmodrcon.password={GMOD_RCON_PASSWORD}'
 
-        mcp_inspector_subprocess = subprocess.Popen(f'{inspector_cmd} {inspector_params} {gmod_params}', shell=True)
+        inspector_cmd = [
+            "npx",
+            "-y",
+            "@modelcontextprotocol/inspector",
+            "java",
+            jvm_params,
+            gmod_params
+        ]
+
+        mcp_inspector_subprocess = subprocess.Popen(inspector_cmd, shell=True)
 
         try:
             mcp_inspector_subprocess.wait()
